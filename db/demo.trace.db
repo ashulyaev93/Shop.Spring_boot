@@ -856,3 +856,7 @@ Caused by: java.io.IOException: Процесс не может получить 
 	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:359)
 	at org.h2.store.FileStore.readFully(FileStore.java:282)
 	... 63 more
+2021-01-02 14:55:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * FROM CATEGOR CATEGORIES CATEGOR[*]"
+Syntax error in SQL statement "SELECT * FROM CATEGOR CATEGORIES CATEGOR[*]"; SQL statement:
+SELECT * FROM CATEGOR CATEGORIES CATEGOR [42000-199]
