@@ -14,10 +14,27 @@
 <div class="container">
     <div th:replace="~{fragments/navigation :: navigation(Index)}"/>
     <h1>Главная страница</h1>
-
-    <div class="list-group">
-        <a th:each="category : ${categories}" th:href="@{'/category/' + ${category.code}}" class="list-group-item" th:text="${category.name}"></a>
-    </div>
+    <br>
+    <h4>Category:</h4>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Код категории</th>
+            <th>Название Категории</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="c : ${category}">
+            <td th:text="${c.code}"/>
+            <td th:text="${c.name}"/>
+            <td>
+                <div class="list-group">
+                    <a th:each="category : ${categories}" th:href="@{'/category/' + ${category.code}}" class="list-group-item" th:text="${category.name}"></a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
     <br/>
     <h4>Variable:</h4>

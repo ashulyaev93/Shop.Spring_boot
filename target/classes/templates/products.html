@@ -63,9 +63,6 @@
                 <a class="btn btn-danger" th:href="@{'/products/edit/' + ${p.id}}">Изменить</a>
             </td>
         </tr>
-        <h5 class="card-text">
-            Category: <a th:href="@{'/category/' + ${product.category.code}}" th:text="${product.category.name}" ></a>
-        </h5>
         </tbody>
     </table>
 
