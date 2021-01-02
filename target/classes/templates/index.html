@@ -15,6 +15,10 @@
     <div th:replace="~{fragments/navigation :: navigation(Index)}"/>
     <h1>Главная страница</h1>
 
+    <div class="list-group">
+        <a th:each="category : ${categories}" th:href="@{'/category/' + ${category.code}}" class="list-group-item" th:text="${category.name}"></a>
+    </div>
+
     <br/>
     <h4>Variable:</h4>
     <div th:text="${name}"></div>
