@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -34,12 +35,17 @@ public class Product {
     @Column(name = "modify_date")
     private Date modifyDate;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     public Product() {
     }
 
-    public Product(String title, Double price) {
+    public Product(String title, Double price, Category category) {
         this.title = title;
         this.price = price;
+        this.category = category;
     }
 
     public Long getId() {
@@ -80,6 +86,14 @@ public class Product {
 
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
